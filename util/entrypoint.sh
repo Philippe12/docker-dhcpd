@@ -51,12 +51,12 @@ if [ -n "$IFACE" ]; then
 
     uid=$(stat -c%u "$data_dir")
     gid=$(stat -c%g "$data_dir")
-    if [ $gid -ne 0 ]; then
-        groupmod -g $gid dhcpd
-    fi
-    if [ $uid -ne 0 ]; then
-        usermod -u $uid dhcpd
-    fi
+    #if [ $gid -ne 0 ]; then
+    #    groupmod -g $gid dhcpd
+    #fi
+    #if [ $uid -ne 0 ]; then
+    #    usermod -u $uid dhcpd
+    #fi
 
     [ -e "$data_dir/dhcpd.leases" ] || touch "$data_dir/dhcpd.leases"
     chown dhcpd:dhcpd "$data_dir/dhcpd.leases"
